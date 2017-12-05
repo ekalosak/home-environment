@@ -25,8 +25,8 @@ filetype plugin indent on
 :imap jj <esc>
 :imap jk <esc>:w<CR>
 :imap <C-j> @q
-:set number 
-:set relativenumber 
+:set relativenumber
+:set number
 :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 :set backspace=2
 :set autoindent
@@ -34,3 +34,7 @@ filetype plugin indent on
 :set textwidth=80
 :highlight ColorColumn ctermbg=0 guibg=lightgrey
 :set wildmenu
+
+:map , <C-W>w
+:map <C-J> <C-W>j<C-W>_
+:map <C-K> <C-W>k<C-W>_
