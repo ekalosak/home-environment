@@ -33,9 +33,16 @@ filetype plugin indent on
 let g:slime_target = "tmux" " configure vim-slime for tmux
 
 :syntax on
+
+" slime send selection to panel commands
+:xmap gs <Plug>SlimeRegionSend
+:nmap gs <Plug>SlimeParagraphSend
+:nmap gr <Plug>SlimeConfig
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_dont_ask_default = 1
+
 :imap jj <esc>
 :imap jk <esc>:w<CR>
-:imap <C-j> @q
 :set relativenumber
 :set number
 :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
