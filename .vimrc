@@ -20,13 +20,17 @@ Plugin 'raimondi/delimitmate'   " Bracket completion with context sensitivity
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whtspc in red
 Plugin 'vim-scripts/groovyindent' " better indenting
 Plugin 'jpalardy/vim-slime' " send lines/chunks to IDE using C-c C-c
+Plugin 'kien/rainbow_parentheses.vim' " highlight parentheses
 
 """ END PACKAGE MANAGER
 call vundle#end()
 filetype plugin indent on
 
 """ VIM SETTINGS
-let g:slime_target = "tmux"
+
+:au VimEnter * RainbowParenthesesToggle
+
+let g:slime_target = "tmux" " configure vim-slime for tmux
 
 :syntax on
 :imap jj <esc>
@@ -58,4 +62,8 @@ let g:slime_target = "tmux"
 let g:airline_theme='molokai'
 
 " change comment color
-:hi Comment guifg=LightBlue
+" :hi Comment guifg=LightBlue
+
+:au Syntax * RainbowParenthesesLoadRound
+:au Syntax * RainbowParenthesesLoadSquare
+:au Syntax * RainbowParenthesesLoadBraces
