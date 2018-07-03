@@ -19,23 +19,21 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'raimondi/delimitmate'   " Bracket completion with context sensitivity
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whtspc in red
 Plugin 'vim-scripts/groovyindent' " better indenting
+Plugin 'jpalardy/vim-slime' " send lines/chunks to IDE using C-c C-c
 
 """ END PACKAGE MANAGER
 call vundle#end()
 filetype plugin indent on
 
 """ VIM SETTINGS
+let g:slime_target = "tmux"
+
 :syntax on
 :imap jj <esc>
 :imap jk <esc>:w<CR>
 :imap <C-j> @q
-<<<<<<< HEAD
 :set relativenumber
 :set number
-=======
-:set number
-:set relativenumber
->>>>>>> 378d66b84d07639ec8610df9049a6423f6caffba
 :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 :set backspace=2
 ":set autoindent
@@ -44,19 +42,20 @@ filetype plugin indent on
 :set textwidth=80
 :highlight ColorColumn ctermbg=0 guibg=lightgrey
 :set wildmenu
-<<<<<<< HEAD
 
-:map , <C-W>w
-:map <C-J> <C-W>j<C-W>_
-:map <C-K> <C-W>k<C-W>_
-=======
 :set clipboard=unnamed
 :set incsearch
 :set pastetoggle=<f5>
+
+" remap increment/decrement to use alt key so GNUscreen shortcut overload is ok
+:nnoremap gi <C-a>
+:nnoremap gd <C-x>
 
 " following are for powerbar/airline
 :set laststatus=2 " Always show statusbar
 :set encoding=utf-8 " Necessary to show Unicode glyphs
 :set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
-let g:airline_theme='solarized'
->>>>>>> 378d66b84d07639ec8610df9049a6423f6caffba
+let g:airline_theme='molokai'
+
+" change comment color
+:hi Comment guifg=LightBlue
