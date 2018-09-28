@@ -6,6 +6,8 @@ exit
 
 # Install basics
 sudo apt-get install vim tmux git curl zsh
+chsh -s $(which zsh) eric
+# log out, log back in
 
 # Get oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
