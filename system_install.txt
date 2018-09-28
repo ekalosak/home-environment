@@ -29,3 +29,10 @@ sudo apt-get install linux-headers-$(uname -r)
 
 # Setup the global Haskell development environment
 sudo apt-get install ghc haskell-stack
+
+# Setup your ssh for github
+cd ~; mkdir .ssh; cd .ssh
+ssh-keygen -t rsa -b 4096 -C "eric.kalosa.kenyon@swift-nav.com"
+ssh-add ~/.ssh/id_rsa
+# follow instructions from github to add public key remotely
+# https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
