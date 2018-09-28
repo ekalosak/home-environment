@@ -26,3 +26,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # If on VirtualBox, install linux kernel headers then guest additions
 sudo apt-get install linux-headers-$(uname -r)
+
+# Setup the global Haskell development environment
+sudo apt-get install ghc haskell-stack
