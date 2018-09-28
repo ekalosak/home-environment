@@ -1,3 +1,5 @@
+## Tested on Debian
+
 # Setup sudo
 su
 visudo /etc/sudoers -> eric 	ALL=(ALL ALL) ALL or whatever is on root
@@ -5,7 +7,7 @@ adduser eric sudo
 exit
 
 # Install basics
-sudo apt-get install vim tmux git curl zsh
+sudo apt-get install vim tmux git curl zsh gcc make perl
 chsh -s $(which zsh) eric
 # log out, log back in
 
@@ -21,3 +23,6 @@ cp home-environment/.zshrc .
 # Install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # start Vim, run :PluginInstall
+
+# If on VirtualBox, install linux kernel headers then guest additions
+sudo apt-get install linux-headers-$(uname -r)
