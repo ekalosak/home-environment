@@ -35,8 +35,10 @@ let g:slime_target = "tmux" " configure vim-slime for tmux
 :syntax on
 
 " slime send selection to panel commands
+:nmap gl <Plug>SlimeLineSend
 :xmap gs <Plug>SlimeRegionSend
 :nmap gs <Plug>SlimeParagraphSend
+" :nmap gs <Plug>SlimeLineSend
 :nmap gr <Plug>SlimeConfig
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
@@ -53,6 +55,9 @@ let g:slime_dont_ask_default = 1
 :set textwidth=80
 :highlight ColorColumn ctermbg=0 guibg=lightgrey
 :set wildmenu
+" :set mouse=a
+
+:autocmd FileType hs setlocal shiftwidth=2 tabstop=2
 
 :set clipboard=unnamed
 :set incsearch
@@ -66,7 +71,8 @@ let g:slime_dont_ask_default = 1
 :set laststatus=2 " Always show statusbar
 :set encoding=utf-8 " Necessary to show Unicode glyphs
 :set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
-let g:airline_theme='molokai'
+let g:airline_theme='solarized'
+" let g:airline_theme='molokai'
 
 " change comment color
 " :hi Comment guifg=LightBlue
