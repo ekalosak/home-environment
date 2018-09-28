@@ -1,0 +1,21 @@
+# Setup sudo
+su
+visudo /etc/sudoers -> eric 	ALL=(ALL ALL) ALL or whatever is on root
+adduser eric sudo
+exit
+
+# Install basics
+sudo apt-get install vim tmux git curl zsh
+
+# Get oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Configure local env
+git clone https://github.com/ekalosak/home-environment.git
+cp home-environment/.tmux.conf .
+cp home-environment/.vimrc .
+cp home-environment/.zshrc .
+
+# Install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# start Vim, run :PluginInstall
