@@ -9,18 +9,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'   " Vim package manager
 " Plugin 'tpope/vim-fugitive'     " Git wrapper internal to Vim
 " Plugin 'tpope/vim-commentary'   " gcc -> commented line
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim' " gcc -> commented
 Plugin 'vim-airline/vim-airline' " status bar at the bottom
 " Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'      " Tab completion
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " HTML completion of tags
 " Plugin 'valloric/youcompleteme' " Code completion suggestions
 Plugin 'raimondi/delimitmate'   " Bracket completion with context sensitivity
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whtspc in red
 Plugin 'vim-scripts/groovyindent' " better indenting
 Plugin 'jpalardy/vim-slime' " send lines/chunks to IDE using C-c C-c
 Plugin 'kien/rainbow_parentheses.vim' " highlight parentheses
+Plugin 'scrooloose/nerdtree' " file browser
 
 """ END PACKAGE MANAGER
 call vundle#end()
@@ -49,8 +50,8 @@ let g:slime_dont_ask_default = 1
 :set number
 :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 :set backspace=2
-":set autoindent
-" :set smartindent
+:set autoindent
+:set smartindent
 :set colorcolumn=80
 :set textwidth=80
 :highlight ColorColumn ctermbg=0 guibg=lightgrey
