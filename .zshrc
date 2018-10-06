@@ -1,9 +1,24 @@
 # ### MY STUFF
+echo "Hello, Eric.\nGetting things ready for you..."
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/erickalosakenyon/.oh-my-zsh"
+
+# autoenv for cd -> command
+# source $(brew --prefix autoenv)/activate.sh
+
+# set the docker environment
+eval $(docker-machine env default)
+
+echo "I've set up your environment variables, your SSH Agent is:"
+
+# Let me know ssh-agent is going
+eval $(ssh-agent)
+
+echo "Now I'm setting up Zsh to be all sleek for ya"
 
 #### FOR OHMYZSH
 # Set name of the theme to load --- if set to "random", it will
@@ -65,6 +80,7 @@ ZSH_THEME="crunch"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+echo "Loading plugins and setting aliases..."
 plugins=(
   git
   autojump
@@ -107,10 +123,17 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 ## My aliases
 alias dml='docker-machine ls --format "table {{.Name}}\t{{.State}}\t{{.Active}}"'
 alias dme='eval $(docker-machine env)'
-alias dil='docker images --format "{{.Repository}}\n\t{{.ID}}: {{.Tag}} | {{.CreatedSince}} | {{.Size}}"'
+alias dil='docker image ls'
+alias dill='docker images --format "{{.Repository}}\n\t{{.ID}}: {{.Tag}} | {{.CreatedSince}} | {{.Size}}"'
 alias dcl='docker container ls -a'
 alias dimg='docker image'
 alias dcnt='docker container'
 alias dmch='docker-machine'
 
 alias tree='ls -R | grep ":$" | sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/   /" -e "s/-/|/"'
+alias hitldb='psql $DATABASE_URL'
+alias runswiftapp='open "/Applications/Swift Console.app/" --args'
+
+alias v='vim'
+
+echo "Done! Ready to go."
