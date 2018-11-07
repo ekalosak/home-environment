@@ -1,0 +1,7 @@
+#!/bin/zsh
+echo "Setting AWS environment variables..."
+export AWS_REGION=$(eval aws configure get region)
+export AWS_SECRET_ACCESS_KEY=$(eval aws configure get aws_secret_access_key)
+export AWS_ACCESS_KEY_ID=$(eval aws configure get aws_access_key_id)
+export AWS_SECRET_TOKEN=$(eval aws configure get aws_session_token)
+echo "Working in region <$AWS_REGION>"
