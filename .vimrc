@@ -48,10 +48,11 @@ let g:slime_dont_ask_default = 1
 :imap jk <esc>:w<CR>
 :set relativenumber
 :set number
-:set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+" :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+:set tabstop=2 shiftwidth=2 expandtab
 :set backspace=2
-:set autoindent
-:set smartindent
+" :set autoindent
+" :set smartindent
 :set colorcolumn=80
 :set textwidth=80
 :highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -81,3 +82,14 @@ let g:airline_theme='solarized'
 :au Syntax * RainbowParenthesesLoadRound
 :au Syntax * RainbowParenthesesLoadSquare
 :au Syntax * RainbowParenthesesLoadBraces
+
+" tab mapping
+:nnoremap <C-j> :tabprevious<CR>
+:nnoremap <C-k> :tabnext<CR>
+nnoremap <silent> <C-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+" command 'te' -> 'tabedit'
+:cnoreabbrev te tabedit
+
+" buffers
+" set switchbuf=usetab
