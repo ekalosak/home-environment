@@ -1,10 +1,14 @@
+[push]
+    default = simple
 [core]
     editor = vim
-    excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     subup = submodule update --init --recursive
     publish = "!git push -u origin HEAD:$(git branch-name)"
 [user]
-	email = helloateric@gmail.com
-	name = Eric Kalosa-Kenyon
+    email = change@this.asap
+    name = myNameIs
+[diff "sopsdiffer"]
+	textconv = sops -d
