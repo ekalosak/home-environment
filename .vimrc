@@ -7,7 +7,7 @@ call vundle#begin()
 
 """ VIM PLUGGINS
 Plugin 'VundleVim/Vundle.vim'   " Vim package manager
-" Plugin 'tpope/vim-fugitive'     " Git wrapper internal to Vim
+Plugin 'tpope/vim-fugitive'     " Git wrapper internal to Vim
 " Plugin 'tpope/vim-commentary'   " gcc -> commented line
 Plugin 'tomtom/tcomment_vim' " gcc -> commented
 Plugin 'vim-airline/vim-airline' " status bar at the bottom
@@ -19,13 +19,18 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " HTML completion of tags
 Plugin 'raimondi/delimitmate'   " Bracket completion with context sensitivity
 Plugin 'bronson/vim-trailing-whitespace' " Highlight trailing whtspc in red
 Plugin 'vim-scripts/groovyindent' " better indenting
-Plugin 'jpalardy/vim-slime' " send lines/chunks to IDE using C-c C-c
+" Plugin 'jpalardy/vim-slime' " send lines/chunks to IDE using C-c C-c
 Plugin 'kien/rainbow_parentheses.vim' " highlight parentheses
 Plugin 'scrooloose/nerdtree' " file browser
+Plugin 'chrisbra/csv.vim' " csv
+" Plugin 'JamshedVesuna/vim-markdown-preview' " README.md preview
+" Plugin 'zhaocai/GoldenView.Vim'
+Plugin 'elmcast/elm-vim'
 
 """ END PACKAGE MANAGER
 call vundle#end()
-filetype plugin indent on
+" filetype plugin indent on
+filetype plugin on
 
 """ VIM SETTINGS
 
@@ -46,6 +51,7 @@ let g:slime_dont_ask_default = 1
 
 :imap jj <esc>
 :imap jk <esc>:w<CR>
+:set nowrap
 :set relativenumber
 :set number
 " :set tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -93,3 +99,6 @@ nnoremap <silent> <C-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " buffers
 " set switchbuf=usetab
+
+" shortcuts
+:nmap gcp yypgcck
