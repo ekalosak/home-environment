@@ -1,0 +1,8 @@
+#!/bin/zsh
+echo "Setting docker environment..."
+# eval $(docker-machine env default)
+# command=$(docker-machine env test)
+# echo $(eval "$command")
+eval $(docker-machine env test) &
+wait $!
+echo "Docker environment set"

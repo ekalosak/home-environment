@@ -1,0 +1,5 @@
+#! /bin/bash
+docker-machine restart default
+echo "virtualmachine default restarted, setting up env"
+sleep 3
+eval $(docker-machine env default)
